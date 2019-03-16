@@ -31,7 +31,7 @@ public class PlayerMovement : MonoBehaviour
             isJumping = true;
             animator.SetBool("isJumping", true);
         }
-        if (Input.GetButtonDown("Crouch"))
+        if (Input.GetButtonDown("Crouch") && controller.m_Grounded)
         {
             isCrouching = true;
             animator.SetBool("isCrouching", true);
@@ -52,6 +52,9 @@ public class PlayerMovement : MonoBehaviour
         if (!isCrouching)
         {
             controller.Move(horizontalMove * Time.fixedDeltaTime, isCrouching, isJumping);
+        } else
+        {
+            controller.Move(0, isCrouching, isJumping);
         }
         isJumping = false;
     }
