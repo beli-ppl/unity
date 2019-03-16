@@ -16,7 +16,7 @@ public class CharacterController2D : MonoBehaviour
 	public bool m_Grounded;
 	const float k_CeilingRadius = .2f;
 	private Rigidbody2D m_Rigidbody2D;
-	private bool m_FacingRight = true;
+	public bool m_FacingRight = true;
 	private Vector3 m_Velocity = Vector3.zero;
 
 	[Header("Events")]
@@ -118,10 +118,18 @@ public class CharacterController2D : MonoBehaviour
 
 	private void Flip()
 	{
-		m_FacingRight = !m_FacingRight;
 
 		Vector3 theScale = transform.localScale;
 		theScale.x *= -1;
 		transform.localScale = theScale;
 	}
+
+    public void setFacing()
+    {
+        m_FacingRight = !m_FacingRight;
+
+        Vector3 theScale = transform.localScale;
+        theScale.x *= -1;
+        transform.localScale = theScale;
+    }
 }

@@ -31,6 +31,7 @@ public class PlayerMovement : MonoBehaviour
             isJumping = true;
             animator.SetBool("isJumping", true);
         }
+
         if (Input.GetButtonDown("Crouch") && controller.m_Grounded)
         {
             isCrouching = true;
@@ -39,6 +40,17 @@ public class PlayerMovement : MonoBehaviour
         {
             isCrouching = false;
             animator.SetBool("isCrouching", false);
+        }
+
+        if (Input.GetAxisRaw("Horizontal") < 0 && controller.m_FacingRight)
+        {
+            Debug.Log("AWU");
+            controller.setFacing();
+        }
+
+        if (Input.GetAxisRaw("Horizontal") > 0 && !controller.m_FacingRight)
+        {
+            controller.setFacing();
         }
     }
 
