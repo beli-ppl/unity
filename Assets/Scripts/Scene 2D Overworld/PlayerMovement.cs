@@ -49,7 +49,10 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        controller.Move(horizontalMove * Time.fixedDeltaTime, isCrouching, isJumping);
+        if (!isCrouching)
+        {
+            controller.Move(horizontalMove * Time.fixedDeltaTime, isCrouching, isJumping);
+        }
         isJumping = false;
     }
 }
