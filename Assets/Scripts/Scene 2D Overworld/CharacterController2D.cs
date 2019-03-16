@@ -58,8 +58,15 @@ public class CharacterController2D : MonoBehaviour
 		}
 	}
 
+    private void Update()
+    {
+        if (Input.GetKeyDown("space"))
+        {
+            Debug.Log("TAI KUCING");
+        }
+    }
 
-	public void Move(float move, bool crouch, bool jump)
+    public void Move(float move, bool crouch, bool jump)
 	{
 		
 		if (!crouch)
