@@ -73,7 +73,7 @@ public class CharacterController2D : MonoBehaviour
 		if (m_Grounded || m_AirControl)
 		{
 
-			if (crouch)
+			if (crouch && m_Grounded)
 			{
 				if (!m_wasCrouching)
 				{
