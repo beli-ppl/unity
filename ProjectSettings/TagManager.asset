@@ -3,7 +3,18 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - spacebar
+  - title
+  - before
+  - enteremailtext
+  - emailinput
+  - giveanswer
+  - questiontext
+  - answerinput
+  - continue
+  - wronganswer
+  - wrongemail
   layers:
   - Default
   - TransparentFX
