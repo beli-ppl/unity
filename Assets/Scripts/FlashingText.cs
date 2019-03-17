@@ -21,11 +21,14 @@ public class FlashingText : MonoBehaviour
     private bool spaceInput;
     public float timer;
     public float timer2;
+    public float timer3;
+    private bool correct;
     public const string MatchEmailPattern =
         @"^(([\w-]+\.)+[\w-]+|([a-zA-Z]{1}|[\w-]{2,}))@"
         + @"((([0-1]?[0-9]{1,2}|25[0-5]|2[0-4][0-9])\.([0-1]?[0-9]{1,2}|25[0-5]|2[0-4][0-9])\."
         + @"([0-1]?[0-9]{1,2}|25[0-5]|2[0-4][0-9])\.([0-1]?[0-9]{1,2}|25[0-5]|2[0-4][0-9])){1}|"
         + @"([a-zA-Z]+[\w-]+\.)+[a-zA-Z]{2,4})$";
+    public Animator animator;
     // Start is called before the first frame update
     void Start()
     {
@@ -50,6 +53,7 @@ public class FlashingText : MonoBehaviour
         continueButton.gameObject.SetActive(false);
         wrongAnswer.enabled = false;
         wrongEmail.enabled = false;
+        correct = false;
         continueButton.onClick.AddListener(CheckAnswer);
     }
 
@@ -92,6 +96,12 @@ public class FlashingText : MonoBehaviour
             answerInput.gameObject.SetActive(true);
             continueButton.gameObject.SetActive(true);
         }
+
+        timer3 += Time.deltaTime;
+        if (correct == true)
+        {
+            ScreenSwitcher();
+        }
     }
 
     void CheckAnswer()
@@ -120,6 +130,8 @@ public class FlashingText : MonoBehaviour
             {
                 wrongEmail.enabled = false;
                 wrongAnswer.enabled = false;
+                timer3 = 0;
+                correct = true;
                 ScreenSwitcher();
             }
         }
@@ -135,6 +147,10 @@ public class FlashingText : MonoBehaviour
 
     public void ScreenSwitcher()
     {
-        SceneManager.LoadScene(1);
+        animator.SetTrigger("FadeOut");
+        if (timer3 >= 1)
+        {
+            SceneManager.LoadScene(1);
+        }
     }
 }

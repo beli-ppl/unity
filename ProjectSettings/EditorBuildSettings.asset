@@ -8,10 +8,13 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+<<<<<<< HEAD
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 045ce07ac9e43425c81420211033c44a
   - enabled: 1
     path: Assets/Scenes/2D Overworld.unity
     guid: 9e9f8d8d85ed7684c98811c1dd2ca8b0
+=======
+>>>>>>> 82a244d63650c345785919c63a00a4509d9bbfe0
   m_configObjects: {}

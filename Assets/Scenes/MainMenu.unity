@@ -21104,6 +21104,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timer: 0
   timer2: 0
+  timer3: 0
+  animator: {fileID: 237599623}
 --- !u!1 &2071862447
 GameObject:
   m_ObjectHideFlags: 0
