@@ -4,21 +4,7 @@
 TagManager:
   serializedVersion: 2
   tags:
-<<<<<<< HEAD
-  - spacebar
-  - title
-  - before
-  - enteremailtext
-  - emailinput
-  - giveanswer
-  - questiontext
-  - answerinput
-  - continue
-  - wronganswer
-  - wrongemail
-=======
-  - Boundary
->>>>>>> 82a244d63650c345785919c63a00a4509d9bbfe0
+  - FxTemporaire
   layers:
   - Default
   - TransparentFX
@@ -28,8 +14,8 @@ TagManager:
   - UI
   - 
   - 
-  - PostProcessing
-  - Player
+  - 
+  - 
   - 
   - 
   - 
